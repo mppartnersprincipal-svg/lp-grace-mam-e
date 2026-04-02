@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Mamãe é Top e o Papai Também! — Grace Bezerra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,800;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:           #eb0031;
+      --purple:        #401199;
+      --blue:          #009ee5;
+      --white:         #ffffff;
+      --red-dark:      #b8002a;
+      --purple-dark:   #2e0c70;
+      --red-light:     #fce8ec;
+      --purple-light:  #ede8f8;
+      --blue-light:    #e0f4fd;
+      --gray-bg:       #fafafa;
+      --gray-border:   #ececec;
+      --text:          #1a1a1a;
+      --text-muted:    #666;
+      --radius-sm:  8px;
+      --radius-md:  12px;
+      --radius-lg:  16px;
+      --radius-xl:  24px;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    .lp {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* TOP BAND */
+    .top-band {
+      background: var(--red);
+      padding: 0.6rem 1.25rem;
+      text-align: center;
+    }
+    .top-band p {
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 3rem 0 2.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--gray-border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: var(--red-light);
+      border-radius: 99px;
+      padding: 5px 14px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 5vw, 2.9rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+
+    .accent-red    { color: var(--red); }
+    .accent-purple { color: var(--purple); }
+    .accent-blue   { color: var(--blue); }
+
+    .hero .sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+      max-width: 580px;
+      margin: 0 auto 2rem;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 1rem 2.5rem;
+      border-radius: 99px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      letter-spacing: 0.01em;
+    }
+    .cta-btn:hover  { background: var(--red-dark); transform: translateY(-1px); }
+    .cta-btn:active { transform: translateY(0); }
+    .cta-btn.purple { background: var(--purple); }
+    .cta-btn.purple:hover { background: var(--purple-dark); }
+
+    .hero-meta {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: var(--text-muted);
+    }
+    .hero-meta span { margin: 0 0.4rem; opacity: 0.4; }
+
+    /* TRUST BAR */
+    .trust-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--red);
+      flex-shrink: 0;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--gray-border);
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 0.75rem;
+    }
+
+    .section h2 {
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+
+    .section p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    /* PAIN LIST */
+    .pain-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin: 1.5rem 0;
+    }
+    .pain-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      font-size: 0.93rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--gray-bg);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      border-left: 3px solid var(--red);
+    }
+    .pain-list li.positive {
+      border-left-color: var(--purple);
+      background: var(--purple-light);
+    }
+    .pain-list li .icon { flex-shrink: 0; margin-top: 1px; }
+
+    /* TRANSFORM */
+    .transform-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    @media (max-width: 480px) { .transform-grid { grid-template-columns: 1fr; } }
+
+    .transform-card {
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+    }
+    .transform-card.before {
+      background: var(--red-light);
+      border: 1px solid #f5c0c8;
+    }
+    .transform-card.after {
+      background: var(--purple-light);
+      border: 1px solid #c9bff0;
+    }
+    .transform-card .card-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .transform-card.before .card-label { color: var(--red); }
+    .transform-card.after  .card-label { color: var(--purple); }
+    .transform-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .transform-card ul li {
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.5;
+      padding-left: 0.75rem;
+      border-left: 2px solid;
+    }
+    .transform-card.before ul li { border-left-color: var(--red); }
+    .transform-card.after  ul li { border-left-color: var(--purple); }
+
+    /* ABOUT */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin: 1.5rem 0;
+    }
+    @media (max-width: 580px) { .about-layout { grid-template-columns: 1fr; } }
+
+    .photo-placeholder {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: var(--red-light);
+      border-radius: var(--radius-lg);
+      border: 2px dashed #f5b0be;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .photo-placeholder svg { width: 48px; height: 48px; opacity: 0.4; }
+    .photo-placeholder .ph-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--red);
+      line-height: 1.5;
+    }
+    .photo-placeholder .ph-tag {
+      font-size: 0.68rem;
+      background: var(--red);
+      color: #fff;
+      border-radius: 99px;
+      padding: 4px 12px;
+      font-weight: 600;
+    }
+    .photo-placeholder .ph-code {
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      font-family: monospace;
+      background: #fff;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .about-info .name {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+    .about-info .title-role {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--red);
+      margin-bottom: 1rem;
+    }
+    .about-info p {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 0.85rem;
+    }
+    .about-info p:last-child { margin-bottom: 0; }
+
+    /* STATS */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+    @media (max-width: 420px) { .stats-row { grid-template-columns: 1fr; } }
+
+    .stat-card {
+      background: var(--gray-bg);
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1rem;
+      text-align: center;
+      border: 1px solid var(--gray-border);
+    }
+    .stat-card .num {
+      font-size: 1.85rem;
+      font-weight: 800;
+      display: block;
+      margin-bottom: 0.2rem;
+      line-height: 1;
+    }
+    .stat-card:nth-child(1) .num { color: var(--red); }
+    .stat-card:nth-child(2) .num { color: var(--purple); }
+    .stat-card:nth-child(3) .num { color: var(--blue); }
+    .stat-card .desc {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* MODULES */
+    .module-list {
+      list-style: none;
+      border: 1px solid var(--gray-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin: 1.5rem 0;
+    }
+    .module-list li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.95rem 1.25rem;
+      border-bottom: 1px solid var(--gray-border);
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .module-list li:last-child { border-bottom: none; }
+    .module-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .module-list li:nth-child(odd)  .module-num { background: var(--red); }
+    .module-list li:nth-child(even) .module-num { background: var(--purple); }
+
+    /* TESTIMONIALS */
+    .testimonials { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0; }
+    .testimonial {
+      border-radius: var(--radius-lg);
+      padding: 1.4rem;
+      border-left: 4px solid;
+    }
+    .testimonial:nth-child(1) { background: var(--red-light);    border-left-color: var(--red); }
+    .testimonial:nth-child(2) { background: var(--purple-light); border-left-color: var(--purple); }
+    .testimonial:nth-child(3) { background: var(--blue-light);   border-left-color: var(--blue); }
+    .testimonial p {
+      font-size: 0.93rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+    .testimonial .author {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* PRICING */
+    .pricing-card {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      margin: 1.5rem 0;
+      border: 2px solid var(--red);
+    }
+    .pricing-top {
+      background: var(--red);
+      padding: 1.5rem 2rem 1.25rem;
+      text-align: center;
+    }
+    .pricing-top .product-name {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 0.75rem;
+    }
+    .pricing-top .price-full {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      text-decoration: line-through;
+      margin-bottom: 0.15rem;
+    }
+    .pricing-top .price-main {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .pricing-top .price-sub {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.85);
+    }
+    .pricing-body { background: #fff; padding: 1.75rem 2rem; }
+
+    .includes-list {
+      list-style: none;
+      margin-bottom: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .includes-list li {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .check {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      background: var(--purple);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .check svg { width: 9px; height: 9px; }
+
+    .cta-full { display: block; width: 100%; text-align: center; padding: 1.1rem; font-size: 1rem; }
+    .guarantee {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* VALUE STACK */
+    .value-stack {
+      background: var(--gray-bg);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      border: 1px solid var(--gray-border);
+      margin-bottom: 1.25rem;
+    }
+    .value-stack .vs-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.87rem;
+      font-weight: 400;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .value-stack .vs-row:last-child { border-bottom: none; }
+    .value-stack .vs-row .val {
+      font-weight: 600;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      white-space: nowrap;
+      margin-left: 1rem;
+    }
+    .value-stack .vs-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0 0;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+    .value-stack .vs-total .val-total { color: var(--red); font-size: 1.15rem; }
+
+    /* FAQ */
+    .faq-list {
+      border: 1px solid var(--gray-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin: 1.5rem 0;
+    }
+    .faq-item { padding: 1.25rem; border-bottom: 1px solid var(--gray-border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item .q {
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+    .faq-item .q::before {
+      content: '';
+      flex-shrink: 0;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--red);
+      margin-top: 7px;
+    }
+    .faq-item .a {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin: 0;
+      padding-left: 1rem;
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      padding: 3.5rem 0 4rem;
+      text-align: center;
+    }
+    .heart-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .heart-divider hr {
+      flex: 1;
+      border: none;
+      border-top: 1px solid var(--gray-border);
+      max-width: 80px;
+    }
+    .final-cta h2 {
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    .final-cta p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.8;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .price-reminder {
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+    }
+
+    /* HEADER */
+    .site-header {
+      background: #fff;
+      padding: 1.25rem;
+      text-align: center;
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .site-logo {
+      height: 64px;
+      width: auto;
+      display: inline-block;
+    }
+
+    /* FOOTER */
+    .footer-band {
+      background: var(--purple);
+      padding: 1.5rem 1.25rem 1.25rem;
+      text-align: center;
+    }
+    .footer-logo {
+      height: 48px;
+      width: auto;
+      display: block;
+      margin: 0 auto 0.75rem;
+      opacity: 0.9;
+      filter: brightness(0) invert(1);
+    }
+    .footer-band p { color: rgba(255,255,255,0.7); font-size: 0.75rem; font-weight: 300; }
+    .footer-band strong { color: #fff; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<div class="top-band">
+  <p>Vagas abertas · Acesso imediato após a compra · 12x sem juros</p>
+</div>
+
+<header class="site-header">
+  <img src="Logo%20SEM%20FUNDO0.png" alt="A Mamãe é Top e o Papai Também!" class="site-logo">
+</header>
+
+<div class="lp">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="tag">
+      <svg width="10" height="9" viewBox="0 0 10 9"><path d="M5 8.5C3 7 1 5.5 1 3.2C1 1.8 2.1 1 3.4 1C4.1 1 4.7 1.4 5 2C5.3 1.4 5.9 1 6.6 1C7.9 1 9 1.8 9 3.2C9 5.5 7 7 5 8.5Z" fill="#eb0031"/></svg>
+      Inteligência Emocional na Prática
+    </div>
+    <h1>
+      Seu filho não tem um<br>
+      <span class="accent-red">problema de comportamento.</span><br>
+      Ele tem uma necessidade emocional<br>
+      <span class="accent-purple">sem resposta.</span>
+    </h1>
+    <p class="sub">
+      Aprenda as ferramentas que 15 anos de consultório comprovaram: como transformar crises, agressividade e rebeldia em conexão real com seus filhos.
+    </p>
+    <a href="#oferta" class="cta-btn">Quero transformar minha relação com meu filho</a>
+    <p class="hero-meta">
+      Acesso imediato <span>·</span> 10 horas de conteúdo <span>·</span> Ferramentas práticas para usar hoje
+    </p>
+  </div>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item"><span class="dot"></span>15 anos de experiência</div>
+    <div class="trust-item"><span class="dot" style="background:var(--purple)"></span>Pais e profissionais</div>
+    <div class="trust-item"><span class="dot" style="background:var(--blue)"></span>Ferramentas práticas</div>
+    <div class="trust-item"><span class="dot"></span>Valores cristãos</div>
+  </div>
+
+  <!-- DOR -->
+  <div class="section">
+    <p class="section-label">Reconhece essa situação?</p>
+    <h2>Você faz tudo por ele — e ainda assim a relação <span class="accent-red">não funciona.</span></h2>
+    <p>Não é falta de amor. É falta de ferramentas. Ninguém nos ensinou como lidar com emoções — nem as nossas, nem as dos nossos filhos.</p>
+    <ul class="pain-list">
+      <li><span class="icon">—</span>Seu filho tem crises de raiva, choro ou agressividade que você não sabe como conter</li>
+      <li><span class="icon">—</span>Você tenta conversar, mas vira briga. Tenta impor limites, mas vira conflito</li>
+      <li><span class="icon">—</span>Sente que está repetindo os erros dos seus próprios pais — mesmo sem querer</li>
+      <li><span class="icon">—</span>Já tentou seguir conselhos da internet, de familiares — e nada funciona de verdade</li>
+      <li><span class="icon">—</span>No fim do dia, a culpa fica. "Será que eu estou errando com meu filho?"</li>
+    </ul>
+    <p>Isso não é fraqueza. É o que acontece quando criamos filhos sem inteligência emocional — porque ninguém nos ensinou isso antes.</p>
+  </div>
+
+  <!-- TRANSFORMAÇÃO -->
+  <div class="section">
+    <p class="section-label">O que muda</p>
+    <h2>Da sobrevivência diária para uma relação que você <span class="accent-purple">realmente queria ter.</span></h2>
+    <div class="transform-grid">
+      <div class="transform-card before">
+        <div class="card-label">Antes</div>
+        <ul>
+          <li>Crises sem saída</li>
+          <li>Conflito constante</li>
+          <li>Culpa e exaustão</li>
+          <li>Repetindo padrões</li>
+          <li>Distância emocional</li>
+        </ul>
+      </div>
+      <div class="transform-card after">
+        <div class="card-label">Depois</div>
+        <ul>
+          <li>Ferramentas para cada situação</li>
+          <li>Limites com conexão</li>
+          <li>Leveza e confiança</li>
+          <li>Novos padrões conscientes</li>
+          <li>Vínculo saudável e real</li>
+        </ul>
+      </div>
+    </div>
+    <p>O resultado não é um filho perfeito. É uma relação honesta, leve e com inteligência emocional dos dois lados.</p>
+  </div>
+
+  <!-- SOBRE -->
+  <div class="section">
+    <p class="section-label">Quem ensina</p>
+    <h2>Experiência de consultório. <span class="accent-red">Ferramentas que funcionam</span> na vida real.</h2>
+    <div class="about-layout">
+      <img src="Foto%20Grace.jpeg"
+           alt="Grace Bezerra — Especialista em Inteligência Emocional"
+           style="width:100%; border-radius:16px; display:block; object-fit:cover; aspect-ratio:3/4;">
+      <div class="about-info">
+        <p class="name">Grace Bezerra</p>
+        <p class="title-role">Especialista em Inteligência Emocional · 15 anos de atuação</p>
+        <p>Ao longo de mais de uma década de consultório, Grace atendeu centenas de famílias com os mesmos desafios que você enfrenta hoje.</p>
+        <p>O que ela ensina não veio de livros — veio de observar o que realmente transforma a relação entre pais e filhos na prática.</p>
+        <p>Suas ferramentas de alfabetização emocional e autoconhecimento já ajudaram pais, educadores, psicólogos e terapeutas a criarem relações mais leves, honestas e saudáveis com as crianças ao seu redor.</p>
+        <p>Tudo fundamentado em valores e princípios cristãos.</p>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card">
+        <span class="num">15+</span>
+        <span class="desc">anos em educação e desenvolvimento emocional</span>
+      </div>
+      <div class="stat-card">
+        <span class="num">10h</span>
+        <span class="desc">de conteúdo direto ao ponto, sem enrolação</span>
+      </div>
+      <div class="stat-card">
+        <span class="num">100%</span>
+        <span class="desc">ferramentas práticas para aplicar hoje mesmo</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO -->
+  <div class="section">
+    <p class="section-label">O que você aprende</p>
+    <h2>10 horas de ferramentas. <span class="accent-purple">Zero teoria vaga.</span></h2>
+    <p>Cada módulo foi construído para sair do curso e ir direto para a sua relação com seus filhos.</p>
+    <ul class="module-list">
+      <li><span class="module-num">1</span>O que é inteligência emocional na prática — e por que muda tudo</li>
+      <li><span class="module-num">2</span>Como identificar e nomear emoções com seus filhos (alfabetização emocional)</li>
+      <li><span class="module-num">3</span>Crises de raiva e agressividade: o que fazer no momento exato</li>
+      <li><span class="module-num">4</span>Limites que funcionam sem guerra nem culpa</li>
+      <li><span class="module-num">5</span>Autoconhecimento: entendendo seus próprios gatilhos emocionais</li>
+      <li><span class="module-num">6</span>Quebrando padrões herdados dos seus pais</li>
+      <li><span class="module-num">7</span>Comunicação não violenta com crianças e adolescentes</li>
+      <li><span class="module-num">8</span>Como construir vínculo com filhos distantes ou resistentes</li>
+      <li><span class="module-num">9</span>Prevenção de doenças emocionais na infância e adolescência</li>
+      <li><span class="module-num">10</span>Plano de ação: como manter o novo padrão no dia a dia</li>
+    </ul>
+  </div>
+
+  <!-- DEPOIMENTOS -->
+  <div class="section">
+    <p class="section-label">Quem já transformou</p>
+    <h2>Resultados reais de <span class="accent-red">pais reais.</span></h2>
+    <p style="font-size:0.78rem; color:var(--text-muted); background:var(--gray-bg); padding:0.6rem 0.85rem; border-radius:var(--radius-sm); border-left:3px solid var(--blue); margin-bottom:0;">⚠️ Substituir pelos depoimentos reais da Grace antes de publicar</p>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"Eu achei que meu filho tinha algum problema sério. Depois do curso, entendi que o problema era a falta de ferramentas — minhas. Em dois meses, a relação mudou completamente."</p>
+        <span class="author">Mãe, 34 anos · filho de 7 anos</span>
+      </div>
+      <div class="testimonial">
+        <p>"Como terapeuta, eu já conhecia a teoria. O que a Grace traz são ferramentas que eu consigo levar para os meus atendimentos. Vale muito além do que paguei."</p>
+        <span class="author">Psicóloga · 29 anos de formação</span>
+      </div>
+      <div class="testimonial">
+        <p>"Minha filha adolescente parou de falar comigo. Hoje a gente tem conversas reais. Não foi magia — foram as ferramentas certas no momento certo."</p>
+        <span class="author">Pai, 42 anos · filha de 15 anos</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARA QUEM É -->
+  <div class="section">
+    <p class="section-label">Para quem é</p>
+    <h2>Feito para pais e profissionais que querem ir <span class="accent-purple">além da teoria.</span></h2>
+    <ul class="pain-list">
+      <li class="positive"><span class="icon">✓</span>Pais e mães que querem uma relação mais leve e saudável com os filhos</li>
+      <li class="positive"><span class="icon">✓</span>Educadores que trabalham diariamente com crianças e adolescentes</li>
+      <li class="positive"><span class="icon">✓</span>Psicólogos e terapeutas que querem novas ferramentas para seus atendimentos</li>
+      <li class="positive"><span class="icon">✓</span>Qualquer pessoa que quer quebrar padrões emocionais herdados e criar novos</li>
+    </ul>
+  </div>
+
+  <!-- OFERTA -->
+  <div class="section" id="oferta">
+    <p class="section-label">Investimento</p>
+    <h2>Menos que uma consulta. Para o <span class="accent-red">resto da relação</span> com seu filho.</h2>
+    <div class="value-stack">
+      <div class="vs-row"><span>Curso completo — 10 horas de conteúdo</span><span class="val">R$ 497</span></div>
+      <div class="vs-row"><span>Acesso vitalício a atualizações</span><span class="val">incluso</span></div>
+      <div class="vs-row"><span>Certificado de conclusão (sob solicitação)</span><span class="val">incluso</span></div>
+      <div class="vs-row"><span>Acesso em qualquer dispositivo</span><span class="val">incluso</span></div>
+      <div class="vs-total"><span>Você paga hoje</span><span class="val-total">R$ 497</span></div>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-top">
+        <p class="product-name">Curso · A Mamãe é Top e o Papai Também!</p>
+        <p class="price-full">De R$ 997</p>
+        <p class="price-main">R$ 497</p>
+        <p class="price-sub">ou 12x de R$ 49,22 · Acesso imediato e vitalício</p>
+      </div>
+      <div class="pricing-body">
+        <ul class="includes-list">
+          <li><span class="check"><svg viewBox="0 0 9 9"><polyline points="1,4.5 3.5,7 8,2" fill="none" stroke="#fff" stroke-width="1.8"/></svg></span>10 horas de conteúdo em vídeo com acesso vitalício</li>
+          <li><span class="check"><svg viewBox="0 0 9 9"><polyline points="1,4.5 3.5,7 8,2" fill="none" stroke="#fff" stroke-width="1.8"/></svg></span>Ferramentas de alfabetização emocional prontas para usar</li>
+          <li><span class="check"><svg viewBox="0 0 9 9"><polyline points="1,4.5 3.5,7 8,2" fill="none" stroke="#fff" stroke-width="1.8"/></svg></span>Metodologia com 15 anos de experiência de consultório</li>
+          <li><span class="check"><svg viewBox="0 0 9 9"><polyline points="1,4.5 3.5,7 8,2" fill="none" stroke="#fff" stroke-width="1.8"/></svg></span>Certificado de conclusão com carga horária (sob solicitação)</li>
+          <li><span class="check"><svg viewBox="0 0 9 9"><polyline points="1,4.5 3.5,7 8,2" fill="none" stroke="#fff" stroke-width="1.8"/></svg></span>Acesso pelo celular, tablet ou computador</li>
+          <li><span class="check"><svg viewBox="0 0 9 9"><polyline points="1,4.5 3.5,7 8,2" fill="none" stroke="#fff" stroke-width="1.8"/></svg></span>Fundamentado em valores e princípios cristãos</li>
+        </ul>
+        <a href="#" class="cta-btn cta-full">Quero transformar minha relação com meu filho</a>
+        <p class="guarantee">Compra 100% segura · Pagamento criptografado · Satisfação garantida</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <p class="section-label">Dúvidas frequentes</p>
+    <h2>Ainda tem dúvidas? <span class="accent-purple">A gente responde.</span></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <p class="q">Precisa ter experiência com inteligência emocional?</p>
+        <p class="a">Não. O curso foi feito para quem está começando do zero. Se você já tem algum conhecimento, vai aprofundar e ganhar ferramentas novas.</p>
+      </div>
+      <div class="faq-item">
+        <p class="q">Funciona para qual faixa etária dos filhos?</p>
+        <p class="a">As ferramentas funcionam para crianças e adolescentes. O foco é na transformação dos pais — e isso impacta qualquer idade.</p>
+      </div>
+      <div class="faq-item">
+        <p class="q">Sou psicólogo ou terapeuta. Esse curso serve para mim?</p>
+        <p class="a">Sim. Vários profissionais já passaram pelo curso e usam as ferramentas nos atendimentos. O certificado de conclusão com carga horária está disponível sob solicitação.</p>
+      </div>
+      <div class="faq-item">
+        <p class="q">Por quanto tempo tenho acesso?</p>
+        <p class="a">Acesso vitalício. Uma vez dentro, é para sempre — incluindo atualizações futuras.</p>
+      </div>
+      <div class="faq-item">
+        <p class="q">E se eu não gostar?</p>
+        <p class="a">Entre em contato. A Grace quer que você tenha resultados — não só que compre o curso.</p>
+      </div>
+      <div class="faq-item">
+        <p class="q">O curso tem base cristã?</p>
+        <p class="a">Sim. O método é fundamentado em valores e princípios cristãos, trazendo uma perspectiva de amor, paciência e propósito para a educação dos filhos.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="final-cta">
+    <div class="heart-divider">
+      <hr/>
+      <svg width="28" height="25" viewBox="0 0 28 25" fill="none">
+        <path d="M14 23C10 20 2 15 2 8.5C2 5 4.7 2.5 8 2.5C10 2.5 12 3.7 14 6C16 3.7 18 2.5 20 2.5C23.3 2.5 26 5 26 8.5C26 15 18 20 14 23Z" fill="#eb0031"/>
+      </svg>
+      <hr/>
+    </div>
+    <h2>A relação que você quer com seu filho<br>começa com a <span class="accent-red">decisão de hoje.</span></h2>
+    <p>Não amanhã. Não quando der. Agora — porque cada dia sem as ferramentas certas é mais um dia de distância que poderia ser conexão.</p>
+    <a href="#oferta" class="cta-btn purple">Quero começar agora · R$ 497</a>
+    <p class="price-reminder">ou 12x de R$ 49,22 · Acesso imediato</p>
+  </div>
+
+</div>
+
+<div class="footer-band">
+  <img src="Logo%20SEM%20FUNDO0.png" alt="A Mamãe é Top e o Papai Também!" class="footer-logo">
+  <p><strong>A Mamãe é Top e o Papai Também!</strong> · Grace Bezerra · Todos os direitos reservados</p>
+</div>
+
+</body>
+</html>
