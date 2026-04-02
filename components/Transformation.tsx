@@ -5,7 +5,7 @@ const after  = ["Ferramentas para cada situação", "Limites com conexão", "Lev
 
 export default function Transformation() {
   return (
-    <div className="py-12 border-b border-brand-gray-border">
+    <div style={{ paddingTop: "3rem", paddingBottom: "3rem" }} className="border-b border-brand-gray-border">
       <ScrollReveal direction="up" delay={0}>
         <p className="inline-flex items-center gap-1.5 text-[0.7rem] font-semibold tracking-[0.1em] uppercase text-brand-purple mb-3">
           O que muda

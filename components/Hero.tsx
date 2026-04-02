@@ -2,7 +2,7 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function Hero() {
   return (
-    <div className="py-12 text-center border-b border-brand-gray-border relative overflow-hidden">
+    <div style={{ paddingTop: "3rem", paddingBottom: "2.5rem" }} className="text-center border-b border-brand-gray-border relative overflow-hidden">
       <ScrollReveal direction="up" delay={0}>
         <div className="inline-flex items-center gap-1.5 text-[0.7rem] font-semibold tracking-[0.1em] uppercase text-brand-red bg-brand-red-light rounded-full px-3.5 py-[5px] mb-6">
           <svg width="10" height="9" viewBox="0 0 10 9" aria-hidden="true">
@@ -13,7 +13,7 @@ export default function Hero() {
       </ScrollReveal>
 
       <ScrollReveal direction="up" delay={150}>
-        <h1 className="text-[clamp(1.9rem,5vw,2.9rem)] font-extrabold leading-[1.15] mb-5 text-brand-text">
+        <h1 className="text-[clamp(1.9rem,5vw,2.9rem)] font-extrabold leading-[1.15] mb-[1.25rem] text-brand-text">
           Seu filho não tem um<br />
           <span className="text-brand-red">problema de comportamento.</span><br />
           Ele tem uma necessidade emocional<br />
@@ -30,7 +30,7 @@ export default function Hero() {
       <ScrollReveal direction="up" delay={450}>
         <a
           href="#oferta"
-          className="inline-block bg-brand-red text-white font-semibold text-[0.95rem] px-10 py-4 rounded-full transition-all duration-200 hover:bg-brand-red-dark hover:-translate-y-px active:translate-y-0"
+          className="block w-full sm:inline-block sm:w-auto bg-brand-red text-white font-semibold text-[0.95rem] px-6 sm:px-10 py-4 rounded-full transition-all duration-200 hover:bg-brand-red-dark hover:-translate-y-px active:translate-y-0"
         >
           Quero transformar minha relação com meu filho
         </a>

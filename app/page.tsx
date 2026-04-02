@@ -18,7 +18,7 @@ export default function Home() {
     <>
       <TopBand />
       <SiteHeader />
-      <main className="max-w-[740px] mx-auto px-5">
+      <main style={{ maxWidth: "740px", margin: "0 auto", padding: "0 1.25rem" }}>
         <Hero />
         <TrustBar />
         <PainPoints />

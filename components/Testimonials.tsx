@@ -23,7 +23,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <div className="py-12 border-b border-brand-gray-border">
+    <div style={{ paddingTop: "3rem", paddingBottom: "3rem" }} className="border-b border-brand-gray-border">
       <ScrollReveal direction="up" delay={0}>
         <p className="inline-flex items-center gap-1.5 text-[0.7rem] font-semibold tracking-[0.1em] uppercase text-brand-purple mb-3">
           Quem já transformou
@@ -31,7 +31,7 @@ export default function Testimonials() {
       </ScrollReveal>
 
       <ScrollReveal direction="up" delay={100}>
-        <h2 className="text-[clamp(1.35rem,3vw,1.85rem)] font-extrabold leading-[1.25] mb-3 text-brand-text">
+        <h2 className="text-[clamp(1.35rem,3vw,1.85rem)] font-extrabold leading-[1.25] mb-5 text-brand-text">
           Resultados reais de <span className="text-brand-red">pais reais.</span>
         </h2>
       </ScrollReveal>

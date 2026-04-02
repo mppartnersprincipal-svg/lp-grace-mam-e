@@ -29,7 +29,7 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <div className="py-12 border-b border-brand-gray-border">
+    <div style={{ paddingTop: "3rem", paddingBottom: "3rem" }} className="border-b border-brand-gray-border">
       <ScrollReveal direction="up" delay={0}>
         <p className="inline-flex items-center gap-1.5 text-[0.7rem] font-semibold tracking-[0.1em] uppercase text-brand-purple mb-3">
           Dúvidas frequentes
@@ -37,7 +37,7 @@ export default function FAQ() {
       </ScrollReveal>
 
       <ScrollReveal direction="up" delay={100}>
-        <h2 className="text-[clamp(1.35rem,3vw,1.85rem)] font-extrabold leading-[1.25] mb-6 text-brand-text">
+        <h2 className="text-[clamp(1.35rem,3vw,1.85rem)] font-extrabold leading-[1.25] mb-5 text-brand-text">
           Ainda tem dúvidas? <span className="text-brand-purple">A gente responde.</span>
         </h2>
       </ScrollReveal>
@@ -46,7 +46,7 @@ export default function FAQ() {
         {faqs.map((faq, i) => (
           <ScrollReveal key={i} direction="up" delay={i * 80}>
             <div className={`px-5 py-5 ${i < faqs.length - 1 ? "border-b border-brand-gray-border" : ""}`}>
-              <p className="text-[0.92rem] font-bold text-brand-text mb-2 flex items-start gap-1.5 before:content-[''] before:shrink-0 before:w-1 before:h-1 before:rounded-full before:bg-brand-red before:mt-[7px]">
+              <p className="text-[0.92rem] font-bold text-brand-text mb-2 flex items-start gap-[0.6rem] before:content-[''] before:shrink-0 before:w-1 before:h-1 before:rounded-full before:bg-brand-red before:mt-[7px]">
                 {faq.q}
               </p>
               <p className="text-[0.88rem] font-light text-brand-muted leading-[1.75] pl-4">

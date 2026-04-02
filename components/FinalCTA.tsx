@@ -2,7 +2,7 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function FinalCTA() {
   return (
-    <div className="py-14 text-center pb-16">
+    <div style={{ paddingTop: "3rem", paddingBottom: "3rem" }} className="text-center">
       <ScrollReveal direction="up" delay={0}>
         <div className="flex items-center justify-center gap-3 mb-6">
           <hr className="flex-1 border-none border-t border-brand-gray-border max-w-[80px]" />
@@ -29,7 +29,7 @@ export default function FinalCTA() {
       <ScrollReveal direction="up" delay={350} duration={800}>
         <a
           href="#oferta"
-          className="inline-block bg-brand-purple text-white font-semibold text-[0.95rem] px-10 py-4 rounded-full transition-all duration-200 hover:bg-brand-purple-dark hover:-translate-y-px active:translate-y-0"
+          className="block w-full sm:inline-block sm:w-auto bg-brand-purple text-white font-semibold text-[0.95rem] px-6 sm:px-10 py-4 rounded-full transition-all duration-200 hover:bg-brand-purple-dark hover:-translate-y-px active:translate-y-0"
         >
           Quero começar agora · R$ 497
         </a>

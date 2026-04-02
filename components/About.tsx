@@ -9,7 +9,7 @@ const stats = [
 
 export default function About() {
   return (
-    <div className="py-12 border-b border-brand-gray-border">
+    <div style={{ paddingTop: "3rem", paddingBottom: "3rem" }} className="border-b border-brand-gray-border">
       <ScrollReveal direction="up" delay={0}>
         <p className="inline-flex items-center gap-1.5 text-[0.7rem] font-semibold tracking-[0.1em] uppercase text-brand-purple mb-3">
           Quem ensina
@@ -17,13 +17,13 @@ export default function About() {
       </ScrollReveal>
 
       <ScrollReveal direction="up" delay={100}>
-        <h2 className="text-[clamp(1.35rem,3vw,1.85rem)] font-extrabold leading-[1.25] mb-6 text-brand-text">
+        <h2 className="text-[clamp(1.35rem,3vw,1.85rem)] font-extrabold leading-[1.25] mb-5 text-brand-text">
           Experiência de consultório.{" "}
           <span className="text-brand-red">Ferramentas que funcionam</span> na vida real.
         </h2>
       </ScrollReveal>
 
-      <div className="grid max-[580px]:grid-cols-1 gap-8 items-start my-6" style={{ gridTemplateColumns: "260px 1fr" }}>
+      <div className="grid grid-cols-1 min-[580px]:[grid-template-columns:260px_1fr] gap-8 items-start my-6">
         <ScrollReveal direction="right" delay={200} duration={800}>
           <Image
             src="/foto-grace.jpeg"
@@ -67,7 +67,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 max-[420px]:grid-cols-1 gap-3 my-6">
+      <div className="grid grid-cols-1 min-[420px]:grid-cols-3 gap-3 my-6">
         {stats.map((stat, i) => (
           <ScrollReveal key={stat.num} direction="up" delay={i * 150}>
             <div className="bg-brand-gray-bg border border-brand-gray-border rounded-xl px-4 py-4 text-center">

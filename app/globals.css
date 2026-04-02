@@ -22,12 +22,6 @@
   --radius-xl: 24px;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -39,4 +33,8 @@ body {
   background: #fff;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+}
+
+ul, ol, li {
+  line-height: inherit;
 }
