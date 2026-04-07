@@ -69,7 +69,7 @@ export default function Pricing() {
             <p className="text-[0.85rem] text-white/60 line-through mb-[0.15rem]">De R$ 997</p>
             <p className="text-[3.2rem] font-extrabold text-white leading-none mb-1">R$ 497</p>
             <p className="text-[0.82rem] font-light text-white/85">
-              ou 12x de R$ 49,22 · Acesso imediato e vitalício
+              ou 12x de R$ 51,40 · Acesso imediato e vitalício
             </p>
           </div>
           <div className="bg-white px-5 sm:px-8 py-7">
