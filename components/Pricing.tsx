@@ -91,19 +91,57 @@ export default function Pricing() {
               Quero transformar minha relação com meu filho
             </a>
 
-            <div className="flex items-center gap-3.5 mt-5">
-              <svg width="58" height="58" viewBox="0 0 58 58" fill="none" aria-hidden="true" className="shrink-0">
-                <circle cx="29" cy="29" r="27" stroke="#7c3aed" strokeWidth="1.5" />
-                <circle cx="29" cy="29" r="23" stroke="#7c3aed" strokeWidth="1" strokeDasharray="2.5 3" />
-                <text x="29" y="26" textAnchor="middle" fontSize="17" fontWeight="800" fill="#7c3aed" fontFamily="inherit">7</text>
-                <text x="29" y="35" textAnchor="middle" fontSize="7" fontWeight="700" fill="#7c3aed" fontFamily="inherit" letterSpacing="1">DIAS</text>
-              </svg>
-              <div>
-                <p className="text-[0.84rem] font-semibold text-brand-text leading-snug">Garantia incondicional</p>
-                <p className="text-[0.75rem] font-light text-brand-muted leading-snug mt-0.5">
-                  Se não gostar em 7 dias, devolvemos 100% do seu dinheiro. Sem perguntas.
-                </p>
+            <div className="flex flex-col gap-3.5 mt-5">
+
+              {/* Garantia 7 dias */}
+              <div className="flex items-center gap-3.5">
+                <svg width="58" height="58" viewBox="0 0 58 58" fill="none" aria-hidden="true" className="shrink-0">
+                  <circle cx="29" cy="29" r="27" stroke="#7c3aed" strokeWidth="1.5" />
+                  <circle cx="29" cy="29" r="23" stroke="#7c3aed" strokeWidth="1" strokeDasharray="2.5 3" />
+                  <text x="29" y="26" textAnchor="middle" fontSize="17" fontWeight="800" fill="#7c3aed" fontFamily="inherit">7</text>
+                  <text x="29" y="35" textAnchor="middle" fontSize="7" fontWeight="700" fill="#7c3aed" fontFamily="inherit" letterSpacing="1">DIAS</text>
+                </svg>
+                <div>
+                  <p className="text-[0.84rem] font-semibold text-brand-text leading-snug">Garantia incondicional</p>
+                  <p className="text-[0.75rem] font-light text-brand-muted leading-snug mt-0.5">
+                    Se não gostar em 7 dias, devolvemos 100% do seu dinheiro. Sem perguntas.
+                  </p>
+                </div>
               </div>
+
+              {/* Aprovado por especialistas */}
+              <div className="flex items-center gap-3.5">
+                <svg width="58" height="58" viewBox="0 0 58 58" fill="none" aria-hidden="true" className="shrink-0">
+                  <circle cx="29" cy="29" r="27" stroke="#eb0031" strokeWidth="1.5" />
+                  <circle cx="29" cy="29" r="23" stroke="#eb0031" strokeWidth="1" strokeDasharray="2.5 3" />
+                  <text x="29" y="24" textAnchor="middle" fontSize="7" fontWeight="700" fill="#eb0031" fontFamily="inherit" letterSpacing="0.5">APROVADO</text>
+                  <text x="29" y="33" textAnchor="middle" fontSize="6" fontWeight="600" fill="#eb0031" fontFamily="inherit" letterSpacing="0.3">POR</text>
+                  <text x="29" y="41" textAnchor="middle" fontSize="6" fontWeight="600" fill="#eb0031" fontFamily="inherit" letterSpacing="0.3">ESPECIALISTAS</text>
+                </svg>
+                <div>
+                  <p className="text-[0.84rem] font-semibold text-brand-text leading-snug">Aprovado por especialistas</p>
+                  <p className="text-[0.75rem] font-light text-brand-muted leading-snug mt-0.5">
+                    Método validado por 15 anos de consultório e reconhecido por profissionais da área.
+                  </p>
+                </div>
+              </div>
+
+              {/* Resultados em 1 mês */}
+              <div className="flex items-center gap-3.5">
+                <svg width="58" height="58" viewBox="0 0 58 58" fill="none" aria-hidden="true" className="shrink-0">
+                  <circle cx="29" cy="29" r="27" stroke="#7c3aed" strokeWidth="1.5" />
+                  <circle cx="29" cy="29" r="23" stroke="#7c3aed" strokeWidth="1" strokeDasharray="2.5 3" />
+                  <text x="29" y="25" textAnchor="middle" fontSize="14" fontWeight="800" fill="#7c3aed" fontFamily="inherit">1</text>
+                  <text x="29" y="34" textAnchor="middle" fontSize="6.5" fontWeight="700" fill="#7c3aed" fontFamily="inherit" letterSpacing="0.5">MÊS</text>
+                </svg>
+                <div>
+                  <p className="text-[0.84rem] font-semibold text-brand-text leading-snug">Resultados em 1 mês</p>
+                  <p className="text-[0.75rem] font-light text-brand-muted leading-snug mt-0.5">
+                    Aplicando as práticas do curso, você sente a diferença na relação com seus filhos em até 30 dias.
+                  </p>
+                </div>
+              </div>
+
             </div>
 
             <p className="text-[0.75rem] font-light text-brand-muted mt-4 text-center leading-[1.6]">

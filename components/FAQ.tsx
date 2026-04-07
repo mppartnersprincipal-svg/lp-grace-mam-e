@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: "E se eu não gostar?",
-    a: "Entre em contato. A Grace quer que você tenha resultados — não só que compre o curso.",
+    a: "Você tem 7 dias de garantia incondicional. Se não gostar por qualquer motivo, basta entrar em contato e devolvemos 100% do seu dinheiro. Sem perguntas.",
   },
   {
     q: "O curso tem base cristã?",
