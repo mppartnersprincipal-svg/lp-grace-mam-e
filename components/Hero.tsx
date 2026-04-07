@@ -1,9 +1,14 @@
 import ScrollReveal from "./ScrollReveal";
+import SocialProof from "./SocialProof";
 
 export default function Hero() {
   return (
     <div style={{ paddingTop: "3rem", paddingBottom: "2.5rem" }} className="text-center border-b border-brand-gray-border relative overflow-hidden">
       <ScrollReveal direction="up" delay={0}>
+        <SocialProof />
+      </ScrollReveal>
+
+      <ScrollReveal direction="up" delay={80}>
         <div className="inline-flex items-center gap-1.5 text-[0.7rem] font-semibold tracking-[0.1em] uppercase text-brand-red bg-brand-red-light rounded-full px-3.5 py-[5px] mb-6">
           <svg width="10" height="9" viewBox="0 0 10 9" aria-hidden="true">
             <path d="M5 8.5C3 7 1 5.5 1 3.2C1 1.8 2.1 1 3.4 1C4.1 1 4.7 1.4 5 2C5.3 1.4 5.9 1 6.6 1C7.9 1 9 1.8 9 3.2C9 5.5 7 7 5 8.5Z" fill="#eb0031" />
