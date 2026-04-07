@@ -1,27 +1,37 @@
+"use client";
+
+import Image from "next/image";
+import { useState, useEffect, useCallback } from "react";
 import ScrollReveal from "./ScrollReveal";
 
-const testimonials = [
-  {
-    text: "\u201cEu achei que meu filho tinha algum problema sério. Depois do curso, entendi que o problema era a falta de ferramentas — minhas. Em dois meses, a relação mudou completamente.\u201d",
-    author: "Mãe, 34 anos · filho de 7 anos",
-    bg: "bg-brand-red-light",
-    border: "border-brand-red",
-  },
-  {
-    text: "\u201cComo terapeuta, eu já conhecia a teoria. O que a Grace traz são ferramentas que eu consigo levar para os meus atendimentos. Vale muito além do que paguei.\u201d",
-    author: "Psicóloga · 29 anos de formação",
-    bg: "bg-brand-purple-light",
-    border: "border-brand-purple",
-  },
-  {
-    text: "\u201cMinha filha adolescente parou de falar comigo. Hoje a gente tem conversas reais. Não foi magia — foram as ferramentas certas no momento certo.\u201d",
-    author: "Pai, 42 anos · filha de 15 anos",
-    bg: "bg-brand-blue-light",
-    border: "border-brand-blue",
-  },
+const slides = [
+  { src: "/WhatsApp-Image-2026-04-02-at-10.15.19.webp",      alt: "Depoimento de aluna" },
+  { src: "/WhatsApp-Image-2026-04-02-at-10.15.19-_1_.webp",  alt: "Depoimento de aluna" },
+  { src: "/WhatsApp-Image-2026-04-02-at-10.15.20.webp",      alt: "Depoimento de aluna" },
+  { src: "/WhatsApp-Image-2026-04-02-at-10.15.20-_1_.webp",  alt: "Depoimento de aluna" },
+  { src: "/WhatsApp-Image-2026-04-02-at-10.15.30.webp",      alt: "Depoimento de aluna" },
+  { src: "/WhatsApp-Image-2026-04-02-at-10.15.31.webp",      alt: "Depoimento de aluna" },
+  { src: "/WhatsApp-Image-2026-04-02-at-10.15.31-_1_.webp",  alt: "Depoimento de aluna" },
+  { src: "/WhatsApp-Image-2026-04-02-at-10.15.31-_2_.webp",  alt: "Depoimento de aluna" },
+  { src: "/WhatsApp-Image-2026-04-02-at-10.15.32.webp",      alt: "Depoimento de aluna" },
 ];
 
+const AUTOPLAY_MS = 2000;
+
 export default function Testimonials() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  const next = useCallback(() => {
+    setActive((i) => (i + 1) % slides.length);
+  }, []);
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(next, AUTOPLAY_MS);
+    return () => clearInterval(id);
+  }, [paused, next]);
+
   return (
     <div style={{ paddingTop: "3rem", paddingBottom: "3rem" }} className="border-b border-brand-gray-border">
       <ScrollReveal direction="up" delay={0}>
@@ -36,26 +46,57 @@ export default function Testimonials() {
         </h2>
       </ScrollReveal>
 
-      <ScrollReveal direction="up" delay={150}>
-        <p className="text-[0.78rem] text-brand-muted bg-brand-gray-bg px-3.5 py-2.5 rounded-lg border-l-[3px] border-brand-blue mb-0">
-          ⚠️ Substituir pelos depoimentos reais da Grace antes de publicar
-        </p>
-      </ScrollReveal>
+      <ScrollReveal direction="up" delay={200}>
+        <div
+          className="relative my-6 select-none"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          onTouchStart={() => setPaused(true)}
+          onTouchEnd={() => setPaused(false)}
+        >
+          {/* Track com fade crossfade */}
+          <div
+            className="relative w-full overflow-hidden rounded-2xl bg-[#e5ddd5]"
+            style={{ minHeight: "340px" }}
+          >
+            {slides.map((slide, i) => (
+              <div
+                key={slide.src}
+                className="absolute inset-0 flex items-center justify-center transition-opacity duration-700"
+                style={{
+                  opacity: i === active ? 1 : 0,
+                  pointerEvents: i === active ? "auto" : "none",
+                }}
+              >
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  width={480}
+                  height={640}
+                  className="w-full h-auto max-h-[520px] object-contain"
+                  priority={i === 0}
+                />
+              </div>
+            ))}
+          </div>
 
-      <div className="flex flex-col gap-4 my-6">
-        {testimonials.map((t, i) => (
-          <ScrollReveal key={i} direction="up" delay={i * 150}>
-            <div className={`${t.bg} border-l-4 ${t.border} rounded-2xl p-[1.4rem]`}>
-              <p className="text-[0.93rem] font-normal italic text-brand-text leading-[1.7] mb-3">
-                {t.text}
-              </p>
-              <span className="text-[0.75rem] font-semibold text-brand-muted">
-                {t.author}
-              </span>
-            </div>
-          </ScrollReveal>
-        ))}
-      </div>
+          {/* Dots de navegação */}
+          <div className="flex justify-center gap-1.5 mt-4">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                aria-label={`Slide ${i + 1}`}
+                className="w-2 h-2 rounded-full transition-all duration-300"
+                style={{
+                  background: i === active ? "#eb0031" : "#d1d1d1",
+                  transform: i === active ? "scale(1.25)" : "scale(1)",
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      </ScrollReveal>
     </div>
   );
 }
