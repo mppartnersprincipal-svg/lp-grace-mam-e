@@ -87,8 +87,24 @@ export default function Pricing() {
             >
               Quero transformar minha relação com meu filho
             </a>
+
+            <div className="flex items-center gap-3.5 mt-5">
+              <svg width="58" height="58" viewBox="0 0 58 58" fill="none" aria-hidden="true" className="shrink-0">
+                <circle cx="29" cy="29" r="27" stroke="#7c3aed" strokeWidth="1.5" />
+                <circle cx="29" cy="29" r="23" stroke="#7c3aed" strokeWidth="1" strokeDasharray="2.5 3" />
+                <text x="29" y="26" textAnchor="middle" fontSize="17" fontWeight="800" fill="#7c3aed" fontFamily="inherit">7</text>
+                <text x="29" y="35" textAnchor="middle" fontSize="7" fontWeight="700" fill="#7c3aed" fontFamily="inherit" letterSpacing="1">DIAS</text>
+              </svg>
+              <div>
+                <p className="text-[0.84rem] font-semibold text-brand-text leading-snug">Garantia incondicional</p>
+                <p className="text-[0.75rem] font-light text-brand-muted leading-snug mt-0.5">
+                  Se não gostar em 7 dias, devolvemos 100% do seu dinheiro. Sem perguntas.
+                </p>
+              </div>
+            </div>
+
             <p className="text-[0.75rem] font-light text-brand-muted mt-4 text-center leading-[1.6]">
-              Compra 100% segura · Pagamento criptografado · Satisfação garantida
+              Compra 100% segura · Pagamento criptografado
             </p>
           </div>
         </div>

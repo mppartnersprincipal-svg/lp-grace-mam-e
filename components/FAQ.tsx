@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
 
 const faqs = [
@@ -27,7 +30,25 @@ const faqs = [
   },
 ];
 
+function ChevronIcon({ open }: { open: boolean }) {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      aria-hidden="true"
+      className="shrink-0 transition-transform duration-300"
+      style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+    >
+      <path d="M3 6l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export default function FAQ() {
+  const [open, setOpen] = useState<number | null>(null);
+
   return (
     <div style={{ paddingTop: "3rem", paddingBottom: "3rem" }} className="border-b border-brand-gray-border">
       <ScrollReveal direction="up" delay={0}>
@@ -43,18 +64,33 @@ export default function FAQ() {
       </ScrollReveal>
 
       <div className="border border-brand-gray-border rounded-2xl overflow-hidden my-6">
-        {faqs.map((faq, i) => (
-          <ScrollReveal key={i} direction="up" delay={i * 80}>
-            <div className={`px-5 py-5 ${i < faqs.length - 1 ? "border-b border-brand-gray-border" : ""}`}>
-              <p className="text-[0.92rem] font-bold text-brand-text mb-2 flex items-start gap-[0.6rem] before:content-[''] before:shrink-0 before:w-1 before:h-1 before:rounded-full before:bg-brand-red before:mt-[7px]">
-                {faq.q}
-              </p>
-              <p className="text-[0.88rem] font-light text-brand-muted leading-[1.75] pl-4">
-                {faq.a}
-              </p>
-            </div>
-          </ScrollReveal>
-        ))}
+        {faqs.map((faq, i) => {
+          const isOpen = open === i;
+          return (
+            <ScrollReveal key={i} direction="up" delay={i * 60}>
+              <div className={i < faqs.length - 1 ? "border-b border-brand-gray-border" : ""}>
+                <button
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                  className="w-full flex items-center justify-between gap-4 px-5 py-5 text-left"
+                >
+                  <span className="text-[0.92rem] font-bold text-brand-text leading-snug">
+                    {faq.q}
+                  </span>
+                  <ChevronIcon open={isOpen} />
+                </button>
+                <div
+                  className="overflow-hidden transition-all duration-300"
+                  style={{ maxHeight: isOpen ? "300px" : "0px", opacity: isOpen ? 1 : 0 }}
+                >
+                  <p className="text-[0.88rem] font-light text-brand-muted leading-[1.75] px-5 pb-5">
+                    {faq.a}
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+          );
+        })}
       </div>
     </div>
   );
