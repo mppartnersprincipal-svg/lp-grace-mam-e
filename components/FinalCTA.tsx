@@ -31,13 +31,13 @@ export default function FinalCTA() {
           href="#oferta"
           className="block w-full sm:inline-block sm:w-auto bg-brand-purple text-white font-semibold text-[0.95rem] px-6 sm:px-10 py-4 rounded-full transition-all duration-200 hover:bg-brand-purple-dark hover:-translate-y-px active:translate-y-0"
         >
-          Quero começar agora · R$ 497
+          Quero começar agora · 12x de R$ 51,40
         </a>
       </ScrollReveal>
 
       <ScrollReveal direction="up" delay={500}>
         <p className="text-[0.78rem] font-light text-brand-muted mt-3">
-          ou 12x de R$ 49,22 · Acesso imediato
+          ou R$ 497 à vista · Acesso imediato
         </p>
       </ScrollReveal>
     </div>
