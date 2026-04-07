@@ -1,16 +1,15 @@
 import ScrollReveal from "./ScrollReveal";
 
 const modules = [
-  "O que é inteligência emocional na prática — e por que muda tudo",
-  "Como identificar e nomear emoções com seus filhos (alfabetização emocional)",
-  "Crises de raiva e agressividade: o que fazer no momento exato",
-  "Limites que funcionam sem guerra nem culpa",
-  "Autoconhecimento: entendendo seus próprios gatilhos emocionais",
-  "Quebrando padrões herdados dos seus pais",
-  "Comunicação não violenta com crianças e adolescentes",
-  "Como construir vínculo com filhos distantes ou resistentes",
-  "Prevenção de doenças emocionais na infância e adolescência",
-  "Plano de ação: como manter o novo padrão no dia a dia",
+  "Perfil comportamental",
+  "Parentalidade Consciente",
+  "Alfabetização Emocional — Reconhecer o sentimento",
+  "Alfabetização Emocional (10 Tipos de Pais)",
+  "Os 4 Temperamentos Na Educação dos Filhos",
+  "Como você ouve Seu Filho (Comunicação Não Violenta) – Que Tipo de ouvinte você é?",
+  "Linguagens de Amor na Educação dos Filhos",
+  "MindSet na Educação dos Filhos",
+  "Alfabetização Emocional",
 ];
 
 export default function CourseContent() {
@@ -24,7 +23,7 @@ export default function CourseContent() {
 
       <ScrollReveal direction="up" delay={100}>
         <h2 className="text-[clamp(1.35rem,3vw,1.85rem)] font-extrabold leading-[1.25] mb-5 text-brand-text">
-          10 horas de ferramentas. <span className="text-brand-purple">Zero teoria vaga.</span>
+          9 módulos de ferramentas. <span className="text-brand-purple">Zero teoria vaga.</span>
         </h2>
       </ScrollReveal>
 
