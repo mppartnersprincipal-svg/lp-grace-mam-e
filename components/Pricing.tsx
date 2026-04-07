@@ -67,9 +67,12 @@ export default function Pricing() {
               Curso · A Mamãe é Top e o Papai Também!
             </p>
             <p className="text-[0.85rem] text-white/60 line-through mb-[0.15rem]">De R$ 997</p>
-            <p className="text-[3.2rem] font-extrabold text-white leading-none mb-1">R$ 497</p>
-            <p className="text-[0.82rem] font-light text-white/85">
-              ou 12x de R$ 51,40 · Acesso imediato e vitalício
+            <p className="text-[0.92rem] font-light text-white/85 leading-none mb-0.5">
+              <span className="text-[1.05rem] font-extrabold">12x</span> de
+            </p>
+            <p className="text-[3.2rem] font-extrabold text-white leading-none mb-1">R$ 51,40</p>
+            <p className="text-[0.82rem] font-light text-white/75">
+              ou R$ 497 à vista · Acesso imediato e vitalício
             </p>
           </div>
           <div className="bg-white px-5 sm:px-8 py-7">
